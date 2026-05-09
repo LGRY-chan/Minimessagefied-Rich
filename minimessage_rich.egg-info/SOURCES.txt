@@ -1,0 +1,10 @@
+README.md
+setup.py
+minimessage_rich/__init__.py
+minimessage_rich/console.py
+minimessage_rich/parser.py
+minimessage_rich.egg-info/PKG-INFO
+minimessage_rich.egg-info/SOURCES.txt
+minimessage_rich.egg-info/dependency_links.txt
+minimessage_rich.egg-info/requires.txt
+minimessage_rich.egg-info/top_level.txt
