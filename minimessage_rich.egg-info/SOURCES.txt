@@ -1,3 +1,4 @@
+LICENSE
 README.md
 setup.py
 minimessage_rich/__init__.py

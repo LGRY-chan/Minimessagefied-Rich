@@ -1,11 +1,59 @@
 Metadata-Version: 2.4
 Name: minimessage-rich
-Version: 0.1.0
+Version: 0.1.1
 Summary: A Rich extension for parsing Minecraft's MiniMessage format
+Home-page: https://github.com/LGRY/Minimessagefied-Rich
 Author: LGRY
+Author-email: your-email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
 Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
 Requires-Dist: rich>=10.0.0
 Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
 Dynamic: requires-dist
 Dynamic: requires-python
 Dynamic: summary
+
+# Minimessagefied-Rich
+
+A Python library that brings Minecraft's MiniMessage format to the Rich library.
+
+## Features
+- Parse MiniMessage tags like `<red>`, `<bold>`, `<click:open_url:'...'>`.
+- Custom MiniMessageConsole for automatic string parsing.
+- Support for hex colors and nested styles.
+- Support for the universal closing tag </>.
+
+## Usage
+### Basic Console
+```
+from minimessage_rich import MiniMessageConsole
+
+console = MiniMessageConsole()
+console.print('<red>Hello <bold>MiniMessage</bold></red>!')
+```
+### Rich component compatibility
+```
+from minimessage_rich import MiniMessageConsole
+from minimessage_rich import parse
+from rich.table import Table
+
+console = MiniMessageConsole()
+
+table = Table(title="MiniMessage in Tables")
+table.add_column("Tag", style="cyan")
+table.add_column("Result")
+table.add_row("<red>Red</red>", parse("<red>Red</red>"))
+table.add_row("<gradient:yellow:red>Fire</>", parse("<gradient:yellow:red>Fire</>"))
+
+console.print(table)
+```
