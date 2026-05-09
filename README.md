@@ -9,10 +9,26 @@ A Python library that brings Minecraft's MiniMessage format to the Rich library.
 - Support for the universal closing tag </>.
 
 ## Usage
-### python
+### Basic Console
+```
 from minimessage_rich import MiniMessageConsole
 
-```
 console = MiniMessageConsole()
 console.print('<red>Hello <bold>MiniMessage</bold></red>!')
+```
+### Rich component compatibility
+```
+from minimessage_rich import MiniMessageConsole
+from minimessage_rich import parse
+from rich.table import Table
+
+console = MiniMessageConsole()
+
+table = Table(title="MiniMessage in Tables")
+table.add_column("Tag", style="cyan")
+table.add_column("Result")
+table.add_row("<red>Red</red>", parse("<red>Red</red>"))
+table.add_row("<gradient:yellow:red>Fire</>", parse("<gradient:yellow:red>Fire</>"))
+
+console.print(table)
 ```
