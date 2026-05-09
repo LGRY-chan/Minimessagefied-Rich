@@ -3,7 +3,7 @@
 A Python library that brings Minecraft's MiniMessage format to the Rich library.
 
 ## Features
-- Parse MiniMessage tags like <red>, <bold>, <click:open_url:'...'>.
+- Parse MiniMessage tags like `<red>`, `<bold>`, `<click:open_url:'...'>`.
 - Custom MiniMessageConsole for automatic string parsing.
 - Support for hex colors and nested styles.
 - Support for the universal closing tag </>.
